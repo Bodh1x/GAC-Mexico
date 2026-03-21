@@ -1124,11 +1124,16 @@
             </div>
         </div>
         <div class="contact-form-section reveal-right">
-            <form id="contactForm" onsubmit="handleSubmit(event)">
-                <div class="form-group"><input type="text" placeholder="Nombre completo" required></div>
-                <div class="form-group"><input type="email" placeholder="Correo electr&oacute;nico" required></div>
-                <div class="form-group"><input type="tel" placeholder="Tel&eacute;fono"></div>
-                <div class="form-group"><textarea placeholder="Cu&eacute;ntanos sobre tu proyecto..." required></textarea></div>
+            <form id="contactForm" action="https://formsubmit.co/armandocelis@gacmexico.com" method="POST">
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde GAC Website">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_next" value="https://bodh1x.github.io/GAC-Mexico/#contacto">
+                <input type="text" name="_honey" style="display:none">
+                <div class="form-group"><input type="text" name="Nombre" placeholder="Nombre completo" required></div>
+                <div class="form-group"><input type="email" name="Correo" placeholder="Correo electr&oacute;nico" required></div>
+                <div class="form-group"><input type="tel" name="Telefono" placeholder="Tel&eacute;fono"></div>
+                <div class="form-group"><textarea name="Mensaje" placeholder="Cu&eacute;ntanos sobre tu proyecto..." required></textarea></div>
                 <button type="submit" class="btn-submit">Enviar Mensaje</button>
             </form>
         </div>
@@ -1375,27 +1380,6 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft') navLightbox(-1);
     if (e.key === 'ArrowRight') navLightbox(1);
 });
-
-// FORM SUBMIT
-function handleSubmit(e) {
-    e.preventDefault();
-    var form = e.target;
-    var inputs = form.querySelectorAll('input, textarea');
-    var nombre = inputs[0].value;
-    var email = inputs[1].value;
-    var tel = inputs[2].value;
-    var mensaje = inputs[3].value;
-    var mailtoBody = 'Nombre: ' + nombre + '%0ATel\u00e9fono: ' + tel + '%0ACorreo: ' + email + '%0A%0A' + mensaje;
-    window.location.href = 'mailto:armandocelis@gacmexico.com?subject=Nuevo proyecto - ' + encodeURIComponent(nombre) + '&body=' + mailtoBody;
-    var btn = form.querySelector('.btn-submit');
-    btn.textContent = 'Mensaje Enviado!';
-    btn.style.background = '#25d366';
-    setTimeout(function() {
-        btn.textContent = 'Enviar Mensaje';
-        btn.style.background = '';
-        form.reset();
-    }, 3000);
-}
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
