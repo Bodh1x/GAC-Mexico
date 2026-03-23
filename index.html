@@ -1098,7 +1098,7 @@
                     </div>
                     <div class="contact-detail-text">
                         <div class="label">Correo Electr&oacute;nico</div>
-                        <div class="value"><a href="mailto:ventas@gacemexico.com">ventas@gacemexico.com</a></div>
+                        <div class="value"><a href="mailto:ventas@gacmexico.com">ventas@gacmexico.com</a></div>
                     </div>
                 </div>
                 <div class="contact-detail">
@@ -1152,7 +1152,7 @@
         </div>
         <div class="footer-col">
             <h4>Contacto</h4>
-            <a href="mailto:ventas@gacemexico.com">ventas@gacemexico.com</a>
+            <a href="mailto:ventas@gacmexico.com">ventas@gacmexico.com</a>
             <a href="tel:+528120731919">812 073 1919</a>
             <a>Monterrey, N.L., M&eacute;xico</a>
         </div>
@@ -1382,7 +1382,7 @@ function handleContact(e) {
     var correo = document.getElementById('cCorreo').value;
     var telefono = document.getElementById('cTelefono').value;
     var mensaje = document.getElementById('cMensaje').value;
-    var destino = 'ventas@gacemexico.com';
+    var destino = 'ventas@gacmexico.com';
     var asunto = 'Solicitud de Cotizaci\u00f3n - ' + nombre;
     var cuerpo = 'Estimado equipo GAC,\n\n'
         + 'Mi nombre es ' + nombre + ' y me pongo en contacto con ustedes para solicitar informaci\u00f3n sobre sus servicios.\n\n'
@@ -1404,6 +1404,10 @@ function handleContact(e) {
             + '&body=' + encodeURIComponent(cuerpo);
     } else if (emailDomain === 'outlook.com' || emailDomain === 'hotmail.com' || emailDomain === 'live.com' || emailDomain === 'msn.com') {
         url = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + encodeURIComponent(destino)
+            + '&subject=' + encodeURIComponent(asunto)
+            + '&body=' + encodeURIComponent(cuerpo);
+    } else if (emailDomain === 'icloud.com' || emailDomain === 'me.com' || emailDomain === 'mac.com') {
+        url = 'https://www.icloud.com/mail/#compose?to=' + encodeURIComponent(destino)
             + '&subject=' + encodeURIComponent(asunto)
             + '&body=' + encodeURIComponent(cuerpo);
     } else if (emailDomain === 'yahoo.com' || emailDomain === 'yahoo.com.mx') {
