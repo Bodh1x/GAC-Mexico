@@ -296,6 +296,32 @@
         .reveal-right.visible { opacity: 1; transform: translateX(0); }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* ============ MARQUEE BAND ============ */
+        .marquee-band {
+            background: linear-gradient(135deg, #f5a623, #ff6b35);
+            overflow: hidden; white-space: nowrap;
+            padding: 14px 0; position: relative; z-index: 10;
+        }
+        .marquee-track {
+            display: inline-block;
+            animation: marqueeScroll 25s linear infinite;
+        }
+        .marquee-track span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem; font-weight: 600;
+            letter-spacing: 4px; text-transform: uppercase;
+            color: #0a0a0a; padding: 0 20px;
+        }
+        .marquee-track .dot {
+            display: inline-block; width: 8px; height: 8px;
+            background: #0a0a0a; border-radius: 50%;
+            vertical-align: middle; margin: 0 15px; opacity: 0.6;
+        }
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* ============ ABOUT ============ */
         #nosotros { background: #0a0a0a; }
         .about-grid {
@@ -789,6 +815,34 @@
     </div>
 </section>
 
+<!-- MARQUEE BAND 1 -->
+<div class="marquee-band">
+    <div class="marquee-track">
+        <span>Cortinas Industriales</span><i class="dot"></i>
+        <span>Herrer&iacute;a Moderna</span><i class="dot"></i>
+        <span>Techumbres</span><i class="dot"></i>
+        <span>Automatizaci&oacute;n</span><i class="dot"></i>
+        <span>Naves Industriales</span><i class="dot"></i>
+        <span>Estructuras Met&aacute;licas</span><i class="dot"></i>
+        <span>Portones</span><i class="dot"></i>
+        <span>Construcci&oacute;n Residencial</span><i class="dot"></i>
+        <span>Albercas</span><i class="dot"></i>
+        <span>Control de Acceso</span><i class="dot"></i>
+        <span>Maquinaria Ligera</span><i class="dot"></i>
+        <span>Cortinas Industriales</span><i class="dot"></i>
+        <span>Herrer&iacute;a Moderna</span><i class="dot"></i>
+        <span>Techumbres</span><i class="dot"></i>
+        <span>Automatizaci&oacute;n</span><i class="dot"></i>
+        <span>Naves Industriales</span><i class="dot"></i>
+        <span>Estructuras Met&aacute;licas</span><i class="dot"></i>
+        <span>Portones</span><i class="dot"></i>
+        <span>Construcci&oacute;n Residencial</span><i class="dot"></i>
+        <span>Albercas</span><i class="dot"></i>
+        <span>Control de Acceso</span><i class="dot"></i>
+        <span>Maquinaria Ligera</span><i class="dot"></i>
+    </div>
+</div>
+
 <!-- ABOUT -->
 <section class="section" id="nosotros">
     <div class="section-header reveal">
@@ -957,6 +1011,8 @@
         <button class="filter-btn" data-filter="estructura">Estructuras</button>
         <button class="filter-btn" data-filter="automatizacion">Automatizaci&oacute;n</button>
         <button class="filter-btn" data-filter="herreria">Herrer&iacute;a</button>
+        <button class="filter-btn" data-filter="construccion">Construcci&oacute;n</button>
+        <button class="filter-btn" data-filter="maquinaria">Maquinaria</button>
         <button class="filter-btn" data-filter="video">Videos</button>
     </div>
 
@@ -1077,8 +1133,155 @@
             <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/17.jpeg" alt="Barra metalica">
             <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Barra Comercial</h4><span>Herrer&iacute;a decorativa</span></div></div>
         </div>
+        <!-- Nuevos Videos -->
+        <div class="gallery-item" data-category="video" data-type="video">
+            <div class="video-badge"><span class="play-icon"></span> VIDEO</div>
+            <video src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/4.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Obra en Progreso</h4><span>Video</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="video" data-type="video">
+            <div class="video-badge"><span class="play-icon"></span> VIDEO</div>
+            <video src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/5.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Instalaci&oacute;n en Sitio</h4><span>Video</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="video" data-type="video">
+            <div class="video-badge"><span class="play-icon"></span> VIDEO</div>
+            <video src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/6.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Montaje de Proyecto</h4><span>Video</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="video" data-type="video">
+            <div class="video-badge"><span class="play-icon"></span> VIDEO</div>
+            <video src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/7.mp4" muted loop playsinline preload="metadata"></video>
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Avance de Obra</h4><span>Video</span></div></div>
+        </div>
+        <!-- Estructura -->
+        <div class="gallery-item" data-category="estructura">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/26.jpeg" alt="Instalacion placas base">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Instalaci&oacute;n de Placas</h4><span>Anclaje estructural</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="estructura">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/27.jpeg" alt="Estructura tubular">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Estructura Tubular</h4><span>Acero pintado</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="estructura">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/44.jpeg" alt="Escalera industrial">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Industrial</h4><span>Acceso de seguridad</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="estructura">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/45.jpeg" alt="Barandal industrial">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Barandal Industrial</h4><span>Protecci&oacute;n met&aacute;lica</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="estructura">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/46.jpeg" alt="Rejilla metalica">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Rejilla Met&aacute;lica</h4><span>Piso industrial</span></div></div>
+        </div>
+        <!-- Naves -->
+        <div class="gallery-item" data-category="naves">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/29.jpeg" alt="Interior nave industrial">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Nave Industrial</h4><span>Interior completo</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="naves">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/31.jpeg" alt="Instalacion lamina techo">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Instalaci&oacute;n de L&aacute;mina</h4><span>Techado industrial</span></div></div>
+        </div>
+        <!-- Automatizacion -->
+        <div class="gallery-item" data-category="automatizacion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/30.jpeg" alt="Porton corredizo industrial">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Port&oacute;n Corredizo</h4><span>Acceso industrial</span></div></div>
+        </div>
+        <!-- Herreria -->
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/28.jpeg" alt="Puerta de emergencia">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Puerta de Emergencia</h4><span>Seguridad industrial</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/33.jpeg" alt="Panel herreria artistica">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Herrer&iacute;a Art&iacute;stica</h4><span>Panel decorativo</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/37.jpeg" alt="Puerta con louvers">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Puerta con Louvers</h4><span>Dise&ntilde;o moderno</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/38.jpeg" alt="Escalera metalica">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Met&aacute;lica</h4><span>Barandal de seguridad</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/39.jpeg" alt="Escalera vista superior">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Interior</h4><span>Vista superior</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/41.jpeg" alt="Puerta herreria artistica">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Puerta Art&iacute;stica</h4><span>Forja decorativa</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="herreria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/42.jpeg" alt="Puerta moderna">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Puerta Moderna</h4><span>Dise&ntilde;o minimalista</span></div></div>
+        </div>
+        <!-- Construccion -->
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/34.jpeg" alt="Armado escalera curva">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Curva</h4><span>Armado de varilla</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/35.jpeg" alt="Escalera curva terminada">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Curva</h4><span>Acabado final</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/36.jpeg" alt="Cimentacion concreto">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Cimentaci&oacute;n</h4><span>Base de concreto</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/40.jpeg" alt="Escalera con acabado madera">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Escalera Residencial</h4><span>Acabado en madera</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/43.jpeg" alt="Terraza con pergola">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Terraza con P&eacute;rgola</h4><span>Muro verde</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/47.jpeg" alt="Edificio comercial terminado">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Edificio Comercial</h4><span>Proyecto terminado</span></div></div>
+        </div>
+        <div class="gallery-item" data-category="construccion">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/48.jpeg" alt="Edificio en construccion">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Edificio en Obra</h4><span>Estructura y fachada</span></div></div>
+        </div>
+        <!-- Maquinaria -->
+        <div class="gallery-item" data-category="maquinaria">
+            <img src="https://raw.githubusercontent.com/Bodh1x/GAC-Mexico/refs/heads/main/img/32.jpeg" alt="Retroexcavadora John Deere">
+            <div class="gallery-item-overlay"><div class="gallery-item-info"><h4>Retroexcavadora</h4><span>John Deere</span></div></div>
+        </div>
     </div>
 </section>
+
+<!-- MARQUEE BAND 2 -->
+<div class="marquee-band">
+    <div class="marquee-track" style="animation-direction: reverse;">
+        <span>Cortinas Industriales</span><i class="dot"></i>
+        <span>Herrer&iacute;a Moderna</span><i class="dot"></i>
+        <span>Techumbres</span><i class="dot"></i>
+        <span>Automatizaci&oacute;n</span><i class="dot"></i>
+        <span>Naves Industriales</span><i class="dot"></i>
+        <span>Estructuras Met&aacute;licas</span><i class="dot"></i>
+        <span>Portones</span><i class="dot"></i>
+        <span>Construcci&oacute;n Residencial</span><i class="dot"></i>
+        <span>Albercas</span><i class="dot"></i>
+        <span>Control de Acceso</span><i class="dot"></i>
+        <span>Maquinaria Ligera</span><i class="dot"></i>
+        <span>Cortinas Industriales</span><i class="dot"></i>
+        <span>Herrer&iacute;a Moderna</span><i class="dot"></i>
+        <span>Techumbres</span><i class="dot"></i>
+        <span>Automatizaci&oacute;n</span><i class="dot"></i>
+        <span>Naves Industriales</span><i class="dot"></i>
+        <span>Estructuras Met&aacute;licas</span><i class="dot"></i>
+        <span>Portones</span><i class="dot"></i>
+        <span>Construcci&oacute;n Residencial</span><i class="dot"></i>
+        <span>Albercas</span><i class="dot"></i>
+        <span>Control de Acceso</span><i class="dot"></i>
+        <span>Maquinaria Ligera</span><i class="dot"></i>
+    </div>
+</div>
 
 <!-- CONTACT -->
 <section class="section" id="contacto">
