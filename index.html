@@ -1578,7 +1578,7 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight') navLightbox(1);
 });
 
-// CONTACT FORM - Smart email detection
+// CONTACT FORM - Universal mailto (works on mobile apps + desktop)
 function handleContact(e) {
     e.preventDefault();
     var nombre = document.getElementById('cNombre').value;
@@ -1598,31 +1598,13 @@ function handleContact(e) {
         + 'Quedo atento a su respuesta.\n'
         + 'Saludos cordiales,\n'
         + nombre;
-    var emailDomain = correo.split('@')[1].toLowerCase();
-    var url;
-    if (emailDomain === 'gmail.com' || emailDomain === 'googlemail.com') {
-        url = 'https://mail.google.com/mail/?view=cm&fs=1'
-            + '&to=' + encodeURIComponent(destino)
-            + '&su=' + encodeURIComponent(asunto)
-            + '&body=' + encodeURIComponent(cuerpo);
-    } else if (emailDomain === 'outlook.com' || emailDomain === 'hotmail.com' || emailDomain === 'live.com' || emailDomain === 'msn.com') {
-        url = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + encodeURIComponent(destino)
-            + '&subject=' + encodeURIComponent(asunto)
-            + '&body=' + encodeURIComponent(cuerpo);
-    } else if (emailDomain === 'icloud.com' || emailDomain === 'me.com' || emailDomain === 'mac.com') {
-        url = 'https://www.icloud.com/mail/#compose?to=' + encodeURIComponent(destino)
-            + '&subject=' + encodeURIComponent(asunto)
-            + '&body=' + encodeURIComponent(cuerpo);
-    } else if (emailDomain === 'yahoo.com' || emailDomain === 'yahoo.com.mx') {
-        url = 'https://compose.mail.yahoo.com/?to=' + encodeURIComponent(destino)
-            + '&subject=' + encodeURIComponent(asunto)
-            + '&body=' + encodeURIComponent(cuerpo);
-    } else {
-        url = 'mailto:' + destino
-            + '?subject=' + encodeURIComponent(asunto)
-            + '&body=' + encodeURIComponent(cuerpo);
-    }
-    window.open(url, '_blank');
+    // mailto: is the universal standard - Android opens Gmail/Outlook app,
+    // iOS opens Mail/Gmail/Outlook app, Desktop opens default email client.
+    // Using window.location (not window.open) ensures mobile apps intercept it.
+    var mailtoUrl = 'mailto:' + destino
+        + '?subject=' + encodeURIComponent(asunto)
+        + '&body=' + encodeURIComponent(cuerpo);
+    window.location.href = mailtoUrl;
     var btn = document.querySelector('.btn-submit');
     btn.textContent = '\u00a1Borrador listo!';
     btn.style.background = '#25d366';
